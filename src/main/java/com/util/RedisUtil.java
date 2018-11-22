@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtil {
     private Logger logger = LoggerFactory.getLogger(RedisUtil.class);
 
-    @Autowired
     private RedisTemplate<Serializable, Object> redisTemplate;
 
     /**
@@ -104,6 +103,7 @@ public class RedisUtil {
     }
 
     public void setRedisTemplate(RedisTemplate<Serializable, Object> redisTemplate) {
+        logger.info("注入template");
         this.redisTemplate = redisTemplate;
     }
 
